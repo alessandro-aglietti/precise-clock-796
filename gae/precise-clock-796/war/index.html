@@ -1,0 +1,83 @@
+<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>anrew</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/6df2b309.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/10243219.vendor.css> <link rel=stylesheet href=styles/1c5cba0a.main.css>  <body style="background-image:url('https://googledrive.com/host/0Bz6jGDlcAc9oZFM2V3VLVGlqVWs');"> <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div class=container> <!-- <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">anrew</h3>
+      </div>--> <!-- <div class="jumbotron">
+        <h1>'Allo, 'Allo!</h1>
+        <p class="lead">Always a pleasure scaffolding your apps.</p>
+        <p><a class="btn btn-lg btn-success" href="#">Splendid! <span class="glyphicon glyphicon-ok"></span></a></p>
+      </div> --> <div class=row> <div class=col-lg-6> <div> <table id=tableee> </table> </div> </div> <div class=col-lg-6> <select id=first><option value="Seleziona un Sistema">Seleziona un Sistema</select> <div id=list> <h4>HTML5 Boilerplate</h4> </div> </div> </div> <!--<div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>--> </div> <script src=scripts/824dc607.vendor.js></script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');</script> <script src=scripts/cb7562c6.plugins.js></script> <script src=scripts/b6c3df09.main.js></script> <script type=text/javascript>var MAP = {
+				FIRST : "Sistema",
+				LIST : "Col1"
+			};
+			
+			var DATA = {};
+		
+		
+		    document.addEventListener('DOMContentLoaded', function() {
+		        var URL = "1TreOjDcWRAKZlsdjTGvAkcO31-Gl5vewlCKrJKcaqhc"
+		        Tabletop.init( { key: URL, callback: myData, simpleSheet: true } )
+			//myData(DATA);
+		    })
+		    function myData(data) {
+				alert("Dati caricati");
+				DATA = data;
+		        //All the sheetsee things you want to do!
+				$(function(){
+					console.log(data.length);
+					
+					var dataToAppend = {};
+					
+					for (var i=0; i<data.length; i++){
+						var row = data[i];
+						dataToAppend[row[MAP.FIRST]] = "";
+					}
+					
+					for (x in dataToAppend) {
+					
+						$("#first").append('<option value=' + x + '>' + x + '</option>');
+						
+					}
+				});
+		    }
+		
+			$("#first").change(function(){
+				$("#tableee").html("");
+				var thisVal = $(this).val();
+				console.log(thisVal);
+				$("#list").html("");
+				for (var i=0; i<DATA.length; i++){
+					var row = DATA[i];
+					if (thisVal == row[MAP.FIRST]) {
+						$("#list").append('<a href="#" onclick="showThis(' + i + ');return false;">' + row[MAP.LIST] + '</a><br /><br />');
+					}
+				}
+			});
+			
+			function showThis(myI) {
+				var row = DATA[myI];
+				
+				var td = "";
+				
+				for (x in row) {
+					td += "<tr><td class='sistema'>" + x +"</td><td>" + row[x] + "</td></tr>";
+				}
+				
+				$("#tableee").html(td);
+			}
+			
+			$("#tableee").click(function(){
+				$("#tableee").html("");
+			});</script>  

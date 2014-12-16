@@ -1,0 +1,19 @@
+{
+  "name": "anrew",
+  "private": true,
+  "dependencies": {
+    "sheetsee": "~1.0.0"
+  },
+  "version": "0.0.0",
+  "authors": [
+    "Alessandro Aglietti <alessandro.aglietti@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
